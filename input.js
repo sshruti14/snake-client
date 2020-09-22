@@ -1,3 +1,5 @@
+const {MoveDown, MoveRight , MoveLeft, MoveUp} = require('./constants');
+
 /**
  * Setup User Interface 
  * Specifically, so that we can handle user input via stdin
@@ -20,16 +22,16 @@ const handleUserInput = function(data){
   if (data === '\u0003') {
     process.exit();
   } 
-  if(data === "w"){
+  if(data === MoveUp){
     connection.write('Move: up')
   }
-  if(data === "s"){
+  if(data === MoveDown){
     connection.write('Move: down')
   }
-  if(data === "d"){
+  if(data === MoveLeft){
     connection.write('Move: left')
   }
-  if(data === "a"){
+  if(data === MoveRight){
     connection.write('Move: right')
   }
   if (data === 'H' || data === 'h') {
